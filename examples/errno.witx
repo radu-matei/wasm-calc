@@ -1,0 +1,6 @@
+(typename $errno
+    (enum u32
+        ;;; Success
+        $ok
+        ;;; Invalid argument
+        $invalid_arg))

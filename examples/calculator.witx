@@ -1,0 +1,11 @@
+(use "errno.witx")
+
+;;; Add two integers
+(module $calculator
+  (@interface func (export "add")
+    (param $lh u32)
+    (param $rh u32)
+    (result $error $errno)
+    (result $res u32)
+  )
+)

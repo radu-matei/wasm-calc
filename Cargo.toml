@@ -1,0 +1,18 @@
+[package]
+name = "wasm-calc"
+version = "0.1.0"
+authors = ["Radu M <root@radu.sh>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.19"
+wiggle = "0.16.0"
+wiggle-test = "0.15.0"
+proptest = "0.9"
+wasmtime = "0.16"
+wasmtime-wasi = "0.16"
+wasi-common = "0.16"
+wat = "1.0.18"
+wig = "0.16.0"
