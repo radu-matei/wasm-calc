@@ -61,11 +61,12 @@ fn instantiate_module(
                     ),
                 )?;
             }
-
             _ => {}
         }
     }
 
+    // The interface types proposal currently defines signed or unsigned integer types.
+    // Here we transform from u32, used in the interface type, to i32, which is a core WASM type.
     linker.func("calculator", "add", |x: i32, y: i32| {
         let ctx = calculator::CalculatorCtx {};
         ctx.add(x as u32, y as u32).unwrap() as i32
@@ -93,9 +94,6 @@ fn invoke_export(instance: Instance, name: &str, args: Vec<String>) -> Result<()
             None => bail!("baaah"),
         };
         values.push(match ty {
-            // TODO: integer parsing here should handle hexadecimal notation
-            // like `0x0...`, but the Rust standard library currently only
-            // parses base-10 representations.
             ValType::I32 => Val::I32(val.parse()?),
             ValType::I64 => Val::I64(val.parse()?),
             ValType::F32 => Val::F32(val.parse()?),
