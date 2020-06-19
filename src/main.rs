@@ -65,11 +65,9 @@ fn instantiate_module(
         }
     }
 
-    // The interface types proposal currently defines signed or unsigned integer types.
-    // Here we transform from u32, used in the interface type, to i32, which is a core WASM type.
     linker.func("calculator", "add", |x: i32, y: i32| {
         let ctx = calculator::CalculatorCtx {};
-        ctx.add(x as u32, y as u32).unwrap() as i32
+        ctx.add(x, y).unwrap()
     })?;
 
     linker.instantiate(&module)

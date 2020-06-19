@@ -3,9 +3,9 @@
 ;;; Add two integers
 (module $calculator
   (@interface func (export "add")
-    (param $lh u32)
-    (param $rh u32)
+    (param $lh s32)
+    (param $rh s32)
     (result $error $errno)
-    (result $res u32)
+    (result $res s32)
   )
 )

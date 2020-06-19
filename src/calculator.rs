@@ -6,7 +6,7 @@ wiggle::from_witx!({
 pub struct CalculatorCtx {}
 
 impl calculator::Calculator for CalculatorCtx {
-    fn add(&self, lh: u32, rh: u32) -> Result<u32, types::Errno> {
+    fn add(&self, lh: i32, rh: i32) -> Result<i32, types::Errno> {
         Ok(lh + rh)
     }
 }
