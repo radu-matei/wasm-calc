@@ -1,0 +1,10 @@
+[package]
+name = "using_add"
+version = "0.1.0"
+authors = ["Radu M <root@radu.sh>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"] # <-- this is the bit we need to add
+
+[dependencies]
